@@ -11,7 +11,7 @@ public abstract class BaseService{
     return getMapper().insert(t);
   }
 
-  public <T extends BaseEntity> T loadById(String id){
+  public <T extends BaseEntity> T loadById(Integer id){
     return getMapper().loadById(id);
   }
 
@@ -23,7 +23,7 @@ public abstract class BaseService{
     return getMapper().update(t);
   }
 
-  public int deleteById(String id){
+  public int deleteById(Integer id){
     return getMapper().deleteById(id);
   }
 
@@ -32,4 +32,5 @@ public abstract class BaseService{
   }
 
   protected abstract BaseMapper getMapper();
+
 }

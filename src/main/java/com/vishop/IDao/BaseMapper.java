@@ -9,7 +9,7 @@ public interface BaseMapper{
    * 
    * @param t
    */
-  public <T> int insert(T t);
+  <T> int insert(T t);
 
   /**
    * 根据ID查询记录
@@ -17,28 +17,28 @@ public interface BaseMapper{
    * @param id
    * @return
    */
-  public <T> T loadById(String id);
+  <T> T loadById(Integer id);
 
 
-  public <T> List<T> list();
+  <T> List<T> list();
 
   /**
    * 根据ID删除记录
    * 
    * @param id
    */
-  public <T> int deleteById(String id);
+  <T> int deleteById(Integer id);
 
   /**
    * 更新记录
    * 
    * @param t
    */
-  public <T> int update(T t);
+  <T> int update(T t);
 
   /**
    * 获取记录总数
    */
-  public long count();
+  long count();
 
 }

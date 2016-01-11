@@ -14,4 +14,6 @@ public interface UserMapper extends BaseMapper{
 
     User selectByNameAndPass(@Param("username")String username,@Param("password")String password);
 
+    User loadByUsername(String username);
+
 }
