@@ -92,7 +92,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="list" resultType="User">
+  <select id="list" resultMap="User">
     select
     <include refid="Base_Column_List" />
     from t_user
@@ -104,7 +104,7 @@
     from t_user
   </select>
 
-  <select id="loadByUsername" parameterType="java.lang.String" resultType="User">
+  <select id="loadByUsername" parameterType="java.lang.String" resultMap="User">
     select
     <include refid="Base_Column_List" />
     from t_user

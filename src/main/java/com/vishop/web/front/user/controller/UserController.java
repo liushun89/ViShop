@@ -2,6 +2,8 @@ package com.vishop.web.front.user.controller;
 
 import com.vishop.entity.common.MapContainer;
 import com.vishop.entity.user.User;
+import com.vishop.entity.user.UserRole;
+import com.vishop.service.user.UserRoleService;
 import com.vishop.service.user.UserService;
 import com.vishop.web.front.user.form.LoginForm;
 import com.vishop.web.front.user.form.RegistForm;
@@ -23,6 +25,9 @@ public class UserController {
 
     @Resource
     private UserService userService;
+    @Resource
+    private UserRoleService userRoleService;
+
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(String msg, Model model){
@@ -54,7 +59,7 @@ public class UserController {
 
     @RequestMapping(value = "/regist", method = RequestMethod.GET)
     public String regist(){
-        return "/user/regist";
+        return "jsp/front/common/regist";
     }
 
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
@@ -62,7 +67,7 @@ public class UserController {
         MapContainer result = UserFormValidator.validateRegist(form);
         if(!result.isEmpty()){
             model.addAllAttributes(result);
-            return "user/regist";
+            return "jsp/front/common/regist";
         }
 
         User user = new User();
@@ -72,9 +77,12 @@ public class UserController {
 
         userService.insert(user);
 
-        // 登录
+        UserRole userRole = new UserRole();
+        userRole.setUserId(user.getId());
+        userRole.setRoleId(4);
+        userRoleService.insert(userRole);
 
-        return "index";
+        return "jsp/front/common/login";
     }
 
 

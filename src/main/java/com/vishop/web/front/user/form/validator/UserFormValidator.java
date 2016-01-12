@@ -33,7 +33,7 @@ public class UserFormValidator {
         if(StringUtils.isBlank(form.getPassword()) || !form.getPassword().matches(CommRegular.PASSWD)){
             result.put("password", "密码输入有误");
         }
-        if(form.getPassword().equals(form.getRepassword())){
+        if(!form.getPassword().equals(form.getRepassword())){
             result.put("repassword", "两次密码输入不同");
         }
         return result;

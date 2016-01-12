@@ -71,7 +71,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="list" resultType="User">
+  <select id="list" resultMap="Permission">
     select
     <include refid="Base_Column_List" />
     from t_permission

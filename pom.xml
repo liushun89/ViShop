@@ -104,6 +104,12 @@
       <artifactId>pagehelper</artifactId>
       <version>4.0.1</version>
     </dependency>
+    <!-- 导入Mysql数据库链接jar包 -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.30</version>
+    </dependency>
     <!-- validator -->
     <dependency>
       <groupId>org.hibernate</groupId>
@@ -203,5 +209,15 @@
   </dependencies>
   <build>
     <finalName>com.vishop</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
   </build>
 </project>

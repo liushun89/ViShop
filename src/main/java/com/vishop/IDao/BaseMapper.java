@@ -9,7 +9,7 @@ public interface BaseMapper{
    * 
    * @param t
    */
-  <T> int insert(T t);
+  public <T> int insert(T t);
 
   /**
    * 根据ID查询记录
