@@ -36,8 +36,6 @@ public class UserControllerTest extends BaseTest{
 
     @Autowired
     private WebApplicationContext wac;
-    @Autowired
-    private UserController userController;
 
     private MockMvc mockMvc;
 
@@ -56,14 +54,28 @@ public class UserControllerTest extends BaseTest{
      * @throws Exception
      */
     @Test
-    @Rollback(false)
+    @Rollback(true)
     public void registTest() throws Exception{
         String name = "Homiss";
         mockMvc.perform((post("/user/regist")
                 .param("username", name)
                 .param("password", "123456")
                 .param("repassword", "123456")
-                .session(session)
+        )).andExpect(status().isOk())
+                .andDo(print());
+    }
+
+    /**
+     * 用户登录
+     */
+    @Test
+    @Rollback(false)
+    public void loginTest() throws Exception{
+        String username = "Homiss";
+        String password = "123456";
+        mockMvc.perform((post("/user/login")
+                .param("username", username)
+                .param("password", "123456")
         )).andExpect(status().isOk())
                 .andDo(print());
     }

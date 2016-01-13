@@ -33,4 +33,7 @@ public class UserService extends BaseService {
     }
 
 
+    public boolean usernameIsExist(String username) {
+        return userMapper.usernameIsExist(username) > 0 ? true : false;
+    }
 }

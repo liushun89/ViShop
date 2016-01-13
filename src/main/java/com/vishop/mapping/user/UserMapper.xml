@@ -99,9 +99,7 @@
   </select>
 
   <select id="count" resultType="java.lang.Integer">
-    select
-    count(id)
-    from t_user
+    select count(id) from t_user
   </select>
 
   <select id="loadByUsername" parameterType="java.lang.String" resultMap="User">
@@ -109,6 +107,10 @@
     <include refid="Base_Column_List" />
     from t_user
     where username = #{username,jdbcType=INTEGER}
+  </select>
+
+  <select id="usernameIsExist" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(id) from t_user where username=#{username}
   </select>
 
 </mapper>

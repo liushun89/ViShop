@@ -51,12 +51,6 @@ public class UserController {
         return "";
     }
 
-    @RequestMapping(value = "/logout")
-    public String logout(){
-        SecurityUtils.getSubject().logout();
-        return "redirect:/user/login?msg=logout";
-    }
-
     @RequestMapping(value = "/regist", method = RequestMethod.GET)
     public String regist(){
         return "jsp/front/common/regist";
@@ -70,6 +64,10 @@ public class UserController {
             return "front/common/regist";
         }
 
+        if(userService.usernameIsExist(form.getUsername())){
+            model.addAttribute("error", "用户名已存在");
+            return "front/common/regist";
+        }
         User user = new User();
         user.setUsername(form.getUsername());
         user.setPassword(form.getPassword());
@@ -85,5 +83,9 @@ public class UserController {
         return "front/common/login";
     }
 
-
+    @RequestMapping(value = "/logout")
+    public String logout(){
+        SecurityUtils.getSubject().logout();
+        return "redirect:/user/login?msg=logout";
+    }
 }
