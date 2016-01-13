@@ -1,5 +1,6 @@
 package com.vishop.web.front.user.controller;
 
+import com.vishop.core.util.MD5Util;
 import com.vishop.entity.common.MapContainer;
 import com.vishop.entity.user.User;
 import com.vishop.service.user.UserRoleService;
@@ -56,7 +57,7 @@ public class UserController {
             model.addAttribute("username", "用户名不存在");
             return "front/common/login";
         }
-        UsernamePasswordToken token = new UsernamePasswordToken(form.getUsername(), form.getPassword());
+        UsernamePasswordToken token = new UsernamePasswordToken(form.getUsername(), MD5Util.calc(form.getPassword(), user.getSalt()));
 
         /*if("1".equals(isRemenber)){
             token.setRememberMe(true);
