@@ -17,4 +17,5 @@ public interface UserMapper extends BaseMapper{
     User loadByUsername(String username);
 
     int usernameIsExist(String username);
+
 }

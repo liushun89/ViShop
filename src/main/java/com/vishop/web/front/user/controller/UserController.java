@@ -2,7 +2,6 @@ package com.vishop.web.front.user.controller;
 
 import com.vishop.entity.common.MapContainer;
 import com.vishop.entity.user.User;
-import com.vishop.entity.user.UserRole;
 import com.vishop.service.user.UserRoleService;
 import com.vishop.service.user.UserService;
 import com.vishop.web.front.user.form.LoginForm;
@@ -52,7 +51,6 @@ public class UserController {
             model.addAllAttributes(result);
             return "front/common/login";
         }
-        // TODO 用户登录验证
         User user = userService.loadByUsername(form.getUsername());
         if(user == null){
             model.addAttribute("username", "用户名不存在");
@@ -103,18 +101,7 @@ public class UserController {
             model.addAttribute("username", "用户名已存在");
             return "front/common/regist";
         }
-        User user = new User();
-        user.setUsername(form.getUsername());
-        user.setPassword(form.getPassword());
-        user.setCreatedTime(System.currentTimeMillis());
-
-        userService.insert(user);
-
-        UserRole userRole = new UserRole();
-        userRole.setUserId(user.getId());
-        userRole.setRoleId(4);
-        userRoleService.insert(userRole);
-
+        userService.regist(form.getUsername(), form.getPassword());
         return "front/common/login";
     }
 

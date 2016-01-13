@@ -54,11 +54,11 @@ public class UserControllerTest extends BaseTest{
      * @throws Exception
      */
     @Test
-    @Rollback(true)
+    @Rollback(false)
     public void registTest() throws Exception{
-        String name = "Homiss";
+        String username = "Shadow";
         mockMvc.perform((post("/user/regist")
-                .param("username", name)
+                .param("username", username)
                 .param("password", "123456")
                 .param("repassword", "123456")
         )).andExpect(status().isOk())
