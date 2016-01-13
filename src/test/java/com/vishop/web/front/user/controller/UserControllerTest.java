@@ -24,6 +24,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
  * Date : 2016/1/12
  * Time : 21:20
  */
+
 public class UserControllerTest extends BaseTest{
 
     private static Logger logger = Logger.getLogger(UserControllerTest.class);

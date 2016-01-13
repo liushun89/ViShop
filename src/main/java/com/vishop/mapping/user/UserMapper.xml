@@ -26,7 +26,7 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
 
-  <insert id="insert" parameterType="com.vishop.entity.user.User" >
+  <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.vishop.entity.user.User" >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >

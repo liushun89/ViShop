@@ -67,7 +67,7 @@ public class UserController {
         MapContainer result = UserFormValidator.validateRegist(form);
         if(!result.isEmpty()){
             model.addAllAttributes(result);
-            return "jsp/front/common/regist";
+            return "front/common/regist";
         }
 
         User user = new User();
@@ -82,7 +82,7 @@ public class UserController {
         userRole.setRoleId(4);
         userRoleService.insert(userRole);
 
-        return "jsp/front/common/login";
+        return "front/common/login";
     }
 
 
