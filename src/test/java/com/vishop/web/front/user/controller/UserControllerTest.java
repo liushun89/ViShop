@@ -75,7 +75,7 @@ public class UserControllerTest extends BaseTest{
         String password = "123456";
         mockMvc.perform((post("/user/login")
                 .param("username", username)
-                .param("password", "123456")
+                .param("password", password)
         )).andExpect(status().isOk())
                 .andDo(print());
     }

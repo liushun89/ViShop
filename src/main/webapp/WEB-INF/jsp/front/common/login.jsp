@@ -12,5 +12,10 @@
 </head>
 <body>
   用户登录
+  <form action="/user/login" method="POST">
+    <input type="text" name="username" value="Homiss" />
+    <input type="password" name="password" value="123456" />
+    <input type="submit" value="Submit" >
+  </form>
 </body>
 </html>
