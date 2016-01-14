@@ -33,7 +33,7 @@
 </div>
 <div class="am-g">
     <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
-        <h3>登录</h3>
+        <h3>注册</h3>
         <hr>
         <br>
         <br>
