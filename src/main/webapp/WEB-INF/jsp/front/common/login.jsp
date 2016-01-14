@@ -22,13 +22,6 @@
   <link rel="stylesheet" href="resource/css/common/login.css"/>
 </head>
 <body>
-<div class="header">
-  <div class="am-g">
-    <h1>Web ide</h1>
-    <p>Integrated Development Environment<br/>代码编辑，代码生成，界面设计，调试，编译</p>
-  </div>
-  <hr />
-</div>
 <div class="am-g">
   <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
     <h3>登录</h3>
@@ -54,7 +47,6 @@
       </div>
     </form>
     <hr>
-    <p>© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
   </div>
 </div>
 </body>
