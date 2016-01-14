@@ -88,7 +88,7 @@ public class UserController {
 
     @RequestMapping(value = "/regist", method = RequestMethod.GET)
     public String regist(){
-        return "jsp/front/common/regist";
+        return "front/common/regist";
     }
 
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
