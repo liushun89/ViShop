@@ -54,7 +54,7 @@
 <div id="main_head_box">
   <div id="menu_wrap">
     <div id="menu_logo">
-      <img src="img/xiaomi_logo.png">
+      <img src="resource/img/temp/xiaomi_logo.png">
     </div>
     <div id="menu_nav">
       <ul>
